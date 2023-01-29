@@ -56,12 +56,12 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto " href="index.html">Home</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">About</a></li>
+          <li><a class="nav-link scrollto " href="/">Home</a></li>
+          <li><a class="nav-link scrollto" href="/#about">About</a></li>
           <li class="dropdown"><a href="javascript:;" class="active"><span>Projects</span> <i class="bi bi-chevron-down"></i></a>
                 <ul>
-                    <li><a href="index.html#project">Featured Projects</a></li>
-                    <li><a href="projects.html">All Projects</a></li>
+                    <li><a href="/#project">Featured Projects</a></li>
+                    <li><a href="/projects">All Projects</a></li>
                 </ul>
             </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
