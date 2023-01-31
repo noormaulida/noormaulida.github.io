@@ -1,8 +1,21 @@
 {
   "prettier.arrowParens": "avoid",
-  "prettier.bracketSpacing": false,
+  "prettier.bracketSpacing": true,
   "prettier.embeddedLanguageFormatting": "off",
   "prettier.proseWrap": "never",
-  "prettier.semi": false,
-  "html.format.enable": false
+  "prettier.semi": true,
+  "html.format.enable": true,
+  "css.format.newlineBetweenRules": false,
+  "css.format.newlineBetweenSelectors": false,
+  "css.format.preserveNewLines": false,
+  "scss.format.enable": false,
+  "css.format.enable": false,
+  "css.format.braceStyle": "expand",
+  "css.completion.completePropertyWithSemicolon": false,
+  "css.completion.triggerPropertyValueCompletion": false,
+  "javascript.format.enable": false,
+  "less.format.enable": false,
+  "json.format.enable": false,
+  "typescript.format.enable": false,
+  "prettier.enable": false
 }
