@@ -4,7 +4,7 @@
   "prettier.embeddedLanguageFormatting": "off",
   "prettier.proseWrap": "never",
   "prettier.semi": true,
-  "html.format.enable": true,
+  "html.format.enable": false,
   "css.format.newlineBetweenRules": false,
   "css.format.newlineBetweenSelectors": false,
   "css.format.preserveNewLines": false,
