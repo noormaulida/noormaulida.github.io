@@ -1,5 +1,5 @@
 # noormaulida.github.io
 
-## pip install htmlmin
+#### pip install htmlmin
 
-## python3 minify.py
+#### python3 minify.py
