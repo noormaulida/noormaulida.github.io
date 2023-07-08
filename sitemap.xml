@@ -6,13 +6,13 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>https://noormaulida.site/</loc>
-  <lastmod>2023-01-28T05:58:37+00:00</lastmod>
+  <loc>http://nrmld.web.id/</loc>
+  <lastmod>2023-07-08T11:24:37+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://noormaulida.site/index.html</loc>
-  <lastmod>2023-01-28T05:58:37+00:00</lastmod>
+  <loc>http://nrmld.web.id/projects</loc>
+  <lastmod>2023-07-08T11:24:37+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
