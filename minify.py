@@ -1,21 +1,21 @@
 import requests
 import htmlmin
-version = "v1"
-f = open(version + "/assets/css/style.css", "r")
+version = "v2"
+f = open("assets/" + version + "/css/style.css", "r")
 css_text = f.read()
 f.close()
 r = requests.post("https://www.toptal.com/developers/cssminifier/api/raw", data={"input":css_text})
 css_minified = r.text
-f2 = open(version + "/assets/css/style.min.css", "w")
+f2 = open("assets/" + version + "/css/style.min.css", "w")
 f2.write(css_minified)
 f2.close()
 
-js = open(version + "/assets/js/main.js", "r")
+js = open("assets/" + version + "/js/main.js", "r")
 js_text = js.read()
 js.close()
 jsr = requests.post("https://www.toptal.com/developers/javascript-minifier/api/raw", data={"input":js_text})
 js_minified = jsr.text
-js2 = open(version + "/assets/css/main.min.js", "w")
+js2 = open("assets/" + version + "/js/main.min.js", "w")
 js2.write(js_minified)
 js2.close()
 
