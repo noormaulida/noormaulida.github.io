@@ -50,7 +50,7 @@
     },
     {
         "header": "Web Application &#8226; Work Project",
-        "name": "RS Mata SMEC",
+        "name": "SMEC Eye Hospital",
         "url": "https://www.rsmatasmec.com",
         "image_path": "assets/img/portfolio/smec.webp",
         "description": "Initiated by: Suitmedia & RS Mata SMEC<br>Role: Backend Developer<br>Technology: PHP, Laravel, Elasticache, MySQL, Nginx"
@@ -80,7 +80,7 @@
         "header": "API Development &#8226; Work Project",
         "name": "Hijup - iOS",
         "url": "https://apps.apple.com/id/app/hijup/id1050544944",
-        "image_path": "assets/img/portfolio/hijup-app.webp",
+        "image_path": "assets/img/portfolio/hijup-.webp",
         "description": "Initiated by: Suitmedia<br>Role: Backend Developer<br>Technology: Ruby, Ruby on Rails, Elasticache, PostgreSQL"
     },
     {
@@ -127,14 +127,14 @@
     },
     {
         "header": "Web Application &#8226; Work Project",
-        "name": "Ace Hardware Indonesia - Product Site",
+        "name": "ACE Hardware Indonesia - Product Site",
         "url": "https://www.acehardware.co.id",
         "image_path": "assets/img/portfolio/ace-hardware-product.webp",
         "description": "Initiated by: Suitmedia & Kawan Lama<br>Role: Backend Developer<br>Technology: PHP, Laravel, Elasticache, MySQL, Nginx"
     },
     {
         "header": "Web Application &#8226; Work Project",
-        "name": "Ace Hardware Indonesia - Corporate Site",
+        "name": "ACE Hardware Indonesia - Corporate Site",
         "url": "https://corporate.acehardware.co.id/en",
         "image_path": "assets/img/portfolio/ace-hardware-corp.webp",
         "description": "Initiated by: Suitmedia & Kawan Lama<br>Role: Backend Developer<br>Technology: PHP, Laravel, Elasticache, MySQL, Nginx"

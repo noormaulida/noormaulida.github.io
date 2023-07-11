@@ -34,3 +34,13 @@ project_html_minified = htmlmin.minify(project_html_text)
 project_html2 = open("projects.html", "w")
 project_html2.write(project_html_minified)
 project_html2.close()
+
+if version == 'v2':
+    project_js = open("assets/" + version + "/js/projects.js", "r")
+    project_js_text = project_js.read()
+    project_js.close()
+    project_jsr = requests.post("https://www.toptal.com/developers/javascript-minifier/api/raw", data={"input":project_js_text})
+    project_js_minified = project_jsr.text
+    project_js2 = open("assets/" + version + "/js/projects.min.js", "w")
+    project_js2.write(project_js_minified)
+    project_js2.close()
