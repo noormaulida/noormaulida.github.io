@@ -1,0 +1,46 @@
+{
+    "data": [
+    {
+        "header": "Web Application &#8226; Work Project",
+        "name": "Panasonic AC Hemat Listrik",
+        "url": "https://achematlistrik.id",
+        "image_path": "assets/img/portfolio/panasonic-ac-square.png",
+        "description": "Initiated by: Suitmedia. Role: Backend Developer. Technology: PHP, Laravel, Elasticache, MySQL, Nginx"
+    },
+    {
+        "header": "Web Application &#8226; Work Project",
+        "name": "RS Mata SMEC",
+        "url": "https://www.rsmatasmec.com",
+        "image_path": "assets/img/portfolio/smec-square.png",
+        "description": "Initiated by: Suitmedia & RS Mata SMEC. Role: Backend Developer. Technology: PHP, Laravel, Elasticache, MySQL, Nginx"
+    },
+    {
+        "header": "Web Application &#8226; Work Project",
+        "name": "POSH Indonesia",
+        "url": "https://www.poshindonesia.id/",
+        "image_path": "assets/img/portfolio/posh-square.png",
+        "description": "Initiated by: Suitmedia. Role: Backend Developer. Technology: PHP, Laravel, Elasticache, MySQL, Nginx"
+    },
+    {
+        "header": "Web Application &#8226; Work Project",
+        "name": "Ace Hardware Indonesia - Product Site",
+        "url": "https://www.acehardware.co.id",
+        "image_path": "assets/img/portfolio/ace-hardware-product-square.png",
+        "description": "Initiated by: Suitmedia & Kawan Lama. Role: Backend Developer. Technology: PHP, Laravel, Elasticache, MySQL, Nginx"
+    },
+    {
+        "header": "Web Application &#8226; Work Project",
+        "name": "Ace Hardware Indonesia - Corporate Site",
+        "url": "https://corporate.acehardware.co.id/en",
+        "image_path": "assets/img/portfolio/ace-hardware-corp-square.png",
+        "description": "Initiated by: Suitmedia & Kawan Lama. Role: Backend Developer. Technology: PHP, Laravel, Elasticache, MySQL, Nginx"
+    },
+    {
+        "header": "Web Application &#8226; Personal Project",
+        "name": "Etnis.id",
+        "url": "https://etnis.id",
+        "image_path": "assets/img/portfolio/etnis-id-square.png",
+        "description": "Initiated by: Etnis.id. Role: System Tester. Technology: NodeJS, Express, React, PostgreSQL, Ghost, Nginx, AWS"
+    }
+    ]
+}
