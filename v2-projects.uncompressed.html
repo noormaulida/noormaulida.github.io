@@ -143,6 +143,7 @@
     <script src="assets/v2/js/bootstrap-datepicker.js"></script>
     <script src="assets/v2/js/jquery.timepicker.min.js"></script>
     <script src="assets/v2/js/main.min.js"></script>
+    <script src="assets/v2/js/projects.js"></script>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5X9VJXHDCS"></script>
@@ -154,14 +155,8 @@
         gtag('config', 'G-5X9VJXHDCS');
         console.log('Sending data to analytics')
       }
-      let projectHtml = ""
-      $.getJSON("data/projects.json", function(json) {
-        var data = json.data;
-        data.forEach(element => {
-          projectHtml += '<div class="col-md-4 ftco-animate"><div class="blog-entry"><a href="' + element.url +'" class="block-20" style="background-image: url(\'' + element.image_path + '\');"></a><div class="text p-4 d-block"><div class="meta mb-3"><div>' + element.header + '</div></div><h3 class="heading"><a href="' + element.url + '" style="color: #008ecc;" target="_blank">' + element.name + ' <p style="font-size:1px;">&nbsp;</p><p style="color: #A7C7E7;font-size: 16px;"><small>' + element.description + '</small></p></a></h3></div></div></div>';
-        });
-        $('#nrmld-projects-here').html(projectHtml);
-      });
+
+      InitProjects();
   </script>
   </body>
 </html>
