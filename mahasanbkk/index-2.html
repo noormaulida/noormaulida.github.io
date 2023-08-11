@@ -1,0 +1,492 @@
+<html lang="en">
+
+
+<!-- Mirrored from www.mahasanbkk.com/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Aug 2023 04:31:02 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable = no">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="animation.js"></script> -->
+    <script>
+        window.onload = function() {
+            $(document).ready(function() {
+                scrollStopOnAction();
+                //setting href for nav-items
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    if ($(window).width() < 832) {
+                        item.setAttribute('href', item + '#m-navbar');
+                    } else {
+                        item.setAttribute('href', item + '#navbar');
+                    }
+                })
+
+                // Select all links with hashes
+                $('a[href*="#"]')
+                    // Remove links that don't actually link to anything
+                    .not('[href="#"]')
+                    .not('[href="#0"]')
+                    .click(function(event) {
+                        // On-page links
+                        if (
+                            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                            location.hostname == this.hostname
+                        ) {
+                            // Figure out element to scroll to
+                            var target = $(this.hash);
+                            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                            // Does a scroll target exist?
+                            if (target.length) {
+                                if ($(window).width() < 832) {
+                                    closeMobileNav();
+                                }
+                                // Only prevent default if animation is actually gonna happen
+                                event.preventDefault();
+                                $('html, body').animate({
+                                    scrollTop: target.offset().top
+                                }, 1000, function() {
+
+                                    // Callback after animation
+                                    // Must change focus!
+                                    var $target = $(target);
+                                    $target.focus();
+                                    if ($target.is(":focus")) { // Checking if the target was focused
+                                        return false;
+                                    } else {
+                                        $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
+                                        $target.focus(); // Set focus again
+                                    };
+                                });
+                            }
+                        }
+                    });
+            });
+        }
+
+        function scrollStopOnAction() {
+            let page = $('html, body');
+            page.on('scroll mousedown wheel DOMMouseScroll mousewheel keyup touchmove', function() {
+                page.stop();
+            })
+        }
+        // left: 37, up: 38, right: 39, down: 40,
+        // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+        var keys = { 37: 1, 38: 1, 39: 1, 40: 1};
+
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+
+        function preventDefaultForScrollKeys(e) {
+            if (keys[e.keyCode]) {
+                preventDefault(e);
+                return false;
+            }
+        }
+
+        // modern Chrome requires { passive: false } when adding event
+        var supportsPassive = false;
+        try {
+            window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function() {
+                    supportsPassive = true;
+                }
+            }));
+        } catch (e) {}
+
+        var wheelOpt = supportsPassive ? {
+            passive: false
+        } : false;
+        var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+        // call this to Disable
+        function disableScroll() {
+            window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+            window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+            window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+            window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+
+        // call this to Enable
+        function enableScroll() {
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+            window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+            window.removeEventListener('touchmove', preventDefault, wheelOpt);
+            window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+        }
+    </script>
+    <!-- <link rel="preload" href="images/1.jpg" as="image">
+    <link rel="preload" href="images/2.jpg" as="image">
+    <link rel="preload" href="images/3.jpg" as="image">
+    <link rel="preload" href="images/4.jpg" as="image">
+    <link rel="preload" href="images/5.jpg" as="image">
+    <link rel="preload" href="images/6.jpg" as="image">
+    <link rel="preload" href="images/7.jpg" as="image">
+    <link rel="preload" href="images/8.jpg" as="image">
+    <link rel="preload" href="images/9.jpg" as="image"> -->
+        <style>
+        .container {
+            background-color: #52130D;
+        }
+        
+        .reservation-button {
+            border: 1px solid #E39D2B;
+            display: block;
+            width: 200px;
+            height: 60px;
+            background-color: #F6B036;
+            padding: 10px;
+            text-align: center;
+            color: #642D12;
+            text-decoration: none;
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+        .covid-img {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .covid-img img {
+            max-width: 800
+        }
+
+        @media only screen and (max-width: 428px) {
+            .covid-img img {
+                width: 100%;
+            }
+        }
+    </style>
+<style>
+    /* Full order message */
+.fully-booked-container {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.fully-booked-img-container {
+   height: 80%;
+   display: flex;
+   flex-direction: column;
+}
+
+.fully-booked-img-container span {
+    align-self: center;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.fully-booked-img {
+    width: auto;
+    height: 100%;
+}
+
+/* for mobile phones */
+@media only screen and (max-width: 832px) {
+    .no-click {
+        pointer-events: none;
+    }
+
+    .mySlides{
+        width: auto;
+        max-width:100%;
+        object-fit:cover;
+    }
+
+    /* loading animation for mobile view */
+    .loading {
+        background: rgba(255, 255, 255, 0.1);
+        justify-content: flex-start;
+        border-radius: 7px;
+        align-items: center;
+        position: relative;
+        padding: 0 5px;
+        display: flex;
+        height: 15px;
+        width: auto;
+        visibility: hidden;
+    }
+    
+    .loading-value {
+        animation: load 3s normal forwards;
+        box-shadow: 0 5px 20px -5px #fff;
+        border-radius: 100px;
+        background: #fff;
+        height: 10px;
+        width: 0;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        z-index: 5;
+        margin-top: 0px;
+        background-color: #8d4f1a;
+        height: auto;
+    }
+
+    .navbar > div {
+        width: 100%;
+        box-shadow: none !important;
+    }
+    
+    .mobile-navbar {
+        background-color: #8d4f1a;
+        height: auto;
+        padding: 10px;
+        color: #f6b036;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .fully-booked-img-container{
+        width: 90%;
+        max-width: 780px;
+        max-height: 500px;
+    }
+
+    /* for tablets and iPads */
+@media only screen and (min-width: 832px) and (max-width: 1024px){
+    .navbar {
+        width: 95%;
+    }
+    .navbar > div {
+        font-size: 15px;
+    }
+    .mySlides{
+        width: auto;
+    }
+    .fully-booked-img-container{
+        width: 90%;
+    }
+    .fully-booked-img{
+        width: 100%;
+    }
+}
+
+    /* Animation for mobile view */
+    @media (prefers-reduced-motion: no-preference) {
+        .content-content-animation  {
+          animation: fadeinfadeout 2s ease-in;
+        }
+    }
+
+    .content-content {
+        font-size: 20px;
+        width: 90%;
+    }
+
+    .footer {
+        font-size: 16px;
+    }
+
+    .footer footer {
+        text-align: center;
+        padding-bottom: 6px;
+    }
+}
+
+
+</style>
+</head>
+
+<body class>
+    <!-- FULL ORDER MESSAGE -->
+    <!-- <div id="full-order" class="fully-booked-container">
+        <div class="fully-booked-img-container">
+            <span class="close">&times;</span>
+            <img class="fully-booked-img" src="images/closed.jpg">
+        </div>
+    </div> -->
+    <div class="container">
+        <!-- Images Slider -->
+        <div class="images-slider">
+            <img class="mySlides" src="images/2.jpg">
+            <img class="mySlides" src="images/3.jpg">
+            <img class="mySlides" src="images/4.jpg">
+            <img class="mySlides" src="images/5.jpg">
+            <img class="mySlides" src="images/6.jpg">
+            <img class="mySlides" src="images/7.jpg">
+            <img class="mySlides" src="images/8.jpg">
+            <img class="mySlides" src="images/9.jpg">
+            <img class="mySlides" src="images/1.jpg">
+
+            <div class="logo">
+                <img src="images/mahasan-logo.png" alt="mahasan logo">
+                <div class="loading" id="loading">
+                    <div class="loading-value"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Bar -->
+        <div id="m-navbar" class="mobile-navbar">
+            <i id="close" class="fa fa-ellipsis-h fa-2x" onclick="closeMobileNav()"></i>
+            <i id="open" class="fa fa-ellipsis-h fa-2x" onclick="openMobileNav()"></i>
+        </div>
+        <!-- Navigation Bar -->
+        <div id="navbar" class="navbar">
+            <div class="grow">
+                <a href="our-story.html" class="nav-item">OUR STORY</a>
+            </div>
+            <div class="grow">
+                <a href="available-table.html" class="nav-item">AVAILABLE TABLE</a>
+            </div>
+            <div class="grow">
+                <a href="index-2.html" class="nav-item">RESERVATION</a>
+            </div>
+            <div class="grow">
+                <a href="how-to-get-here.html" class="nav-item">HOW TO GET HERE</a>
+            </div>
+            <div class="grow">
+                <a href="terms-of-use.html" class="nav-item">TERMS OF USE</a>
+            </div>
+        </div>
+        <script>
+        // full order
+        // var modal = document.getElementById("full-order");
+        // var span = document.getElementsByClassName("close")[0];
+        // span.onclick = function() { 
+        //     modal.style.display = "none";
+        // }
+
+        // ************ //
+        var indexes = {current: 0};
+        var slides = document.getElementsByClassName('mySlides');
+        $(document).ready(slidePictures());
+
+        function slidePictures() {
+            if (indexes.last) {
+                slides[indexes.last].classList.remove('visible');
+            }
+            slides[indexes.current].classList.add('visible');
+            indexes.last = indexes.current;
+            indexes.current++;
+            if (indexes.current >= slides.length) {
+                indexes.current = 0;
+            }
+            setTimeout(slidePictures, 5000);
+        }
+            //first visit animation on mobile view
+            if ($(window).width() < 832 && location.hash == '') {
+                $(document).ready(function(){
+                    $(this).scrollTop(0);                
+                });
+                disableScroll();
+                $('body').addClass('no-click');
+                document.getElementById('loading').style.visibility = 'visible';
+
+                setTimeout(function() {
+                    $('#loading').fadeOut('fast');
+                }, 3000);
+
+                setTimeout(function() {
+                    $('html, body').scrollTop(0).show;
+                    $('html, body').animate({
+                        scrollTop: ($('#m-navbar').offset().top)
+                    }, 1000);
+                    enableScroll();
+                    $('body').removeClass('no-click');
+                }, 3000)
+            }
+
+            if(location.hash == '' && $(window).width() > 832){
+                $(document).ready(function(){
+                    $(this).scrollTop(0);                
+                });
+                disableScroll();
+                $('body').addClass('no-click');
+                setTimeout(function() {
+                    $('html, body').scrollTop(0).show;
+                    $('html, body').animate({
+                        scrollTop: ($('#navbar').offset().top)
+                    }, 1000);
+                    enableScroll();
+                    $('body').removeClass('no-click');
+                }, 1500)
+            }
+            //calculate distance 
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    let scrollTop = $(window).scrollTop(),
+                        elementOffset = $('#navbar').offset().top,
+                        distance = elementOffset - scrollTop;
+                    localStorage.setItem('distance', distance);
+                    localStorage.setItem('off', scrollTop);
+                })
+            })
+            //animation for page redirecting
+            $(document).ready(function() {
+                let url = document.referrer;
+                let target = location.hash;
+                let page = $('html, body');
+                let value = localStorage.getItem('distance');
+                if (target.length) {
+                    if (value > 0) {
+                        setTimeout(function() {
+                            page.scrollTop(localStorage.getItem('off')).show();
+                            page.animate({
+                                scrollTop: ($(target).offset().top)
+                            }, 1000);
+                        })
+                    } else if (value <= 0) {
+                        setTimeout(function() {
+                            page.scrollTop(0).show();
+                            page.animate({
+                                scrollTop: ($(target).offset().top)
+                            }, 0);
+                        })
+                    }
+                }
+            })
+        </script>        <!-- Content Bar -->
+        <div class="content" id="content">
+            <div class="content-title">
+                <h1>RESERVATION</h1>
+                <img src="images/title-image.png" alt="title image">
+            </div>
+            <!-- <div class="covid-img">
+                <img src="images/closed.jpg" alt="covid issue">
+            </div> -->
+            <div class="content-content">
+                <p>We are friendly and cosy restaurant with only 7 tables, 1 chef, and staffs who will try to serve you best. With only one chef, we are unable to plan for a long-term reservation. Therefore, we will open a reservation for only 2-3 months per round.</p>
+                <br>
+                <a href="https://book.chope.co/booking?rid=mahasan2102bkk&amp;source=rest_website.mahasan&amp;smart=1" class="reservation-button">RESERVATION</a>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer">
+            <footer>
+                2016/46-47 Chan 23/1 Alley, Chong nonsri, Yan nawa, Bangkok, 10120 Thailand | Tel:
+                <a href="tel:+666 3406 5566" class="social"> +666 3406 5566 </a>|
+                <a href="https://www.instagram.com/mahasanofficial/" class="fa fa-instagram social"> </a>
+                <br>
+                &copy;Copyright 2021 - 2022 | Developed By <a href="https://www.fusionsol.com/" target="_blank" class="social">Fusionsol</a> | All Rights Reserved To Mahasan
+            </footer>
+        </div>
+        </div>
+        <script src="main.js"></script>
+        <script>
+            function show() {
+                document.getElementById("specialRequest").style.display = "block";
+            }
+        </script>
+        </body>
+        
+<!-- Mirrored from www.mahasanbkk.com/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 11 Aug 2023 04:31:02 GMT -->
+</html>
